@@ -2,5 +2,5 @@ streamlit
 mediapipe
 opencv-python-headless
 fpdf2
-numpy
 google-generativeai
+numpy
