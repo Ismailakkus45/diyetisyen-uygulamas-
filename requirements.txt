@@ -3,4 +3,4 @@ mediapipe
 opencv-python-headless
 fpdf2
 numpy
-google-generativeai>=0.8.0
+google-generativeai
