@@ -1,1 +1,4 @@
 libgl1
+libxext6
+libsm6
+libxrender1
