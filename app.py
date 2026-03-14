@@ -8,14 +8,15 @@ import google.generativeai as genai
 # --- 1. AI & SISTEM YAPILANDIRMASI ---
 st.set_page_config(page_title="Dijital Formül AI v3.0", layout="wide")
 
-# Gemini Kurulumu
+# --- AI KURULUMU (GÜNCEL & HATASIZ) ---
 try:
     api_key = st.secrets["GEMINI_API_KEY"]
     genai.configure(api_key=api_key)
-    # Model ismini tam yol (models/...) vererek 'NotFound' hatasını fixliyoruz
-    ai_model = genai.GenerativeModel('models/gemini-1.5-flash')
+    
+    # İsmi sadeleştiriyoruz, 'v1beta' hatasını bu şekilde bypass ederiz
+    ai_model = genai.GenerativeModel('gemini-1.5-flash') 
 except Exception as e:
-    st.error(f"⚠️ AI Yapılandırma Hatası: {e}. Lütfen Streamlit Secrets ayarlarını kontrol et.")
+    st.error(f"⚠️ AI Yapılandırma Hatası: {e}")
 
 # MediaPipe Pose Modelini Önbelleğe Alıyoruz (Performans için)
 @st.cache_resource
